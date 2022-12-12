@@ -1,0 +1,16 @@
+@mixin set-text-style($font-size: 10px, $color, $letter-space: 10px) {
+  font-size: $font-size;
+  color: $color;
+  letter-spacing: $letter-space;
+}
+
+@function get-color($background-color) {
+  @if lightness($background-color) > 60% {
+    // light mode
+    @return darken($background-color, 50%);
+  } @else {
+    // dark mode
+    @warn "dark mode not supported, you passed #{$background-color} ";
+    @return lighten($background-color, 50%);
+  }
+}

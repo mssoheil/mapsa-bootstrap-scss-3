@@ -1,8 +1,10 @@
-:root {
-  --border-radius: 10px;
-}
+@import "variables";
+@import "mixins";
+@import "button";
 
-$primary-color: rgb(66, 66, 157);
+body {
+  background-color: $page-background;
+}
 
 .btn {
   --color: red;
@@ -15,8 +17,10 @@ $primary-color: rgb(66, 66, 157);
 .wrapper {
   .inner-wrapper {
     p {
-      color: $primary-color;
-      font-size: 20px;
+      // mixin
+      @include set-text-style(30px, green);
+      // function
+      color: get-color($page-background);
     }
 
     button {
