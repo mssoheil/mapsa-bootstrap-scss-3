@@ -7,6 +7,7 @@
 @function get-color($background-color) {
   @if lightness($background-color) > 60% {
     // light mode
+    @debug "logged #{$background-color}";
     @return darken($background-color, 50%);
   } @else {
     // dark mode
@@ -16,7 +17,7 @@
 }
 
 @mixin get-display($lang) {
-  @if ($lang = "en") {
+  @if ($lang == "en") {
     direction: ltr;
   }
 }
