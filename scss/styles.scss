@@ -1,0 +1,36 @@
+:root {
+  --border-radius: 10px;
+}
+
+$primary-color: rgb(66, 66, 157);
+
+.btn {
+  --color: red;
+  background: $primary-color;
+  padding: 20px;
+  border-radius: var(--border-radius);
+  color: var(--color);
+}
+
+.wrapper {
+  .inner-wrapper {
+    p {
+      color: $primary-color;
+      font-size: 20px;
+    }
+
+    button {
+      padding: 20px;
+      border-radius: 14px;
+      //   &:hover {
+      //     background-color: $primary-color;
+      //   }
+      &.my-btn {
+        background-color: $primary-color;
+        &--disabled {
+          color: #fff;
+        }
+      }
+    }
+  }
+}
