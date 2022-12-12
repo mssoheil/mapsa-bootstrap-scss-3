@@ -27,7 +27,8 @@
   }
 }
 
-@function get-border-radius($radius) {
+
+@function get-border-radius($radius...) {
   @if $radius < 5 {
     @return #{$radius + 6}px;
   } @else if $radius > 5 and $radius < 8 {
@@ -43,12 +44,33 @@
   }
 }
 
+$list : "envelop": 3px, "eye": 5px
 $list: (1, 2, 3, 4, 5);
 
 @mixin set-font-size() {
-  @each $item in $list {
+  @each $name, $size in $list {
     .my-h#{$item} {
       font-size: $item * 15px;
     }
+
+    .#{$name} {
+      font-size: $size;
+    }
   }
 }
+
+@mixin x() {
+  @for $index from 1 through 3 {
+    p(nh-child:3n + #{$index}) {
+
+    }
+  }
+}
+
+@mixin y($myvar) {
+  @while $myvar > 1 {
+
+  }
+}
+
+
