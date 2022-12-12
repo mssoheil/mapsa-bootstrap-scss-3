@@ -14,3 +14,13 @@
     @return lighten($background-color, 50%);
   }
 }
+
+$list: (1, 2, 3, 4, 5);
+
+@mixin set-font-size() {
+  @each $item in $list {
+    .my-h#{$item} {
+      font-size: $item * 15px;
+    }
+  }
+}
