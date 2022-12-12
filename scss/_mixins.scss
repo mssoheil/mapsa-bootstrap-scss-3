@@ -15,6 +15,27 @@
     @return lighten($background-color, 50%);
   }
 }
+@function get-color($background-color) {
+  @if lightness($background-color) > 60% {
+    // light mode
+    @debug "logged #{$background-color}";
+    @return darken($background-color, 50%);
+  } @else {
+    // dark mode
+    @warn "dark mode not supported, you passed #{$background-color} ";
+    @return lighten($background-color, 50%);
+  }
+}
+
+@function get-border-radius($radius) {
+  @if $radius < 5 {
+    @return #{$radius + 6}px;
+  } @else if $radius > 5 and $radius < 8 {
+    @return #{$radius + 16}px;
+  } @else {
+    @return #{$radius - 3}px;
+  }
+}
 
 @mixin get-display($lang) {
   @if ($lang == "en") {

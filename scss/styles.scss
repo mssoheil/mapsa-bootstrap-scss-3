@@ -41,6 +41,7 @@ body {
       &.custom-border-button {
         background: green;
         @extend %border-style;
+        border-radius: get-border-radius(7);
       }
     }
   }
