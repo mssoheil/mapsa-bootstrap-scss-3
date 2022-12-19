@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/styles.css" />
     <title>bootstrap-scss 3</title>
+    <script src="./js/index.js" defer></script>
   </head>
   <body>
     <button class="btn">my button</button>
@@ -45,6 +46,13 @@
           <li>l2</li>
           <li>l3</li>
         </ol>
+        <h3>Todos:</h3>
+        <ul class="list-unstyled" id="todos">
+          <li onclick="handleTodoDone(this)">Learn Js</li>
+          <li onclick="handleTodoDone(this)">Learn Scss</li>
+          <li onclick="handleTodoDone(this)">Practice React</li>
+          <li onclick="handleTodoDone(this)">Practice Js</li>
+        </ul>
       </div>
     </div>
   </body>
