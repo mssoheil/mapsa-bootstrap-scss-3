@@ -1,0 +1,72 @@
+@mixin set-text-style($font-size: 10px, $color, $letter-space: 10px) {
+  font-size: $font-size;
+  color: $color;
+  letter-spacing: $letter-space;
+}
+
+@function get-color($background-color) {
+  @if lightness($background-color) > 60% {
+    // light mode
+    @debug "logged #{$background-color}";
+    @return darken($background-color, 50%);
+  } @else {
+    // dark mode
+    @warn "dark mode not supported, you passed #{$background-color} ";
+    @return lighten($background-color, 50%);
+  }
+}
+@function get-color($background-color) {
+  @if lightness($background-color) > 60% {
+    // light mode
+    @debug "logged #{$background-color}";
+    @return darken($background-color, 50%);
+  } @else {
+    // dark mode
+    @warn "dark mode not supported, you passed #{$background-color} ";
+    @return lighten($background-color, 50%);
+  }
+}
+
+@function get-border-radius($radius...) {
+  @if $radius < 5 {
+    @return #{$radius + 6}px;
+  } @else if $radius > 5 and $radius < 8 {
+    @return #{$radius + 16}px;
+  } @else {
+    @return #{$radius - 3}px;
+  }
+}
+
+@mixin get-display($lang) {
+  @if ($lang == "en") {
+    direction: ltr;
+  }
+}
+
+$list: "envelop" 3px, "eye" 5px;
+$list: (1, 2, 3, 4, 5);
+
+@mixin set-font-size() {
+  @each $name, $size in $list {
+    .my-h#{$item} {
+      font-size: $item * 15px;
+    }
+
+    .#{$name} {
+      font-size: $size;
+    }
+  }
+}
+
+@mixin x() {
+  @for $index from 1 through 3 {
+    p: (nth-child: 3n + #{$index}) {
+
+    }
+  }
+}
+
+@mixin y($myvar) {
+  @while $myvar > 1 {
+  }
+}

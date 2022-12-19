@@ -1,7 +1,7 @@
-@import "variables";
-@import "mixins";
+@import "variables-custom";
+@import "mixins-custom";
 @import "button";
-@import "utilities";
+@import "utilities-custom";
 
 body {
   background-color: $page-background;
