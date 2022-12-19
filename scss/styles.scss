@@ -7,50 +7,44 @@ body {
   background-color: $page-background;
 }
 
-.btn {
-  --color: red;
-  background: $primary-color;
-  padding: 20px;
-  border-radius: var(--border-radius);
-  color: var(--color);
-}
+// .btn {
+//   --color: red;
+//   background: $primary-color;
+//   padding: 20px;
+//   border-radius: var(--border-radius);
+//   color: var(--color);
+// }
 
-.wrapper {
-  .inner-wrapper {
-    [lang="fa"] p {
-      // mixin
-      @include set-text-style(30px, green);
-      // function
-      color: get-color($page-background);
-    }
+// .wrapper {
+//   .inner-wrapper {
+//     [lang="fa"] p {
+//       // mixin
+//       @include set-text-style(30px, green);
+//       // function
+//       color: get-color($page-background);
+//     }
 
-    @include set-font-size();
-    button {
-      padding: 20px;
-      border-radius: 14px;
-      //   &:hover {
-      //     background-color: $primary-color;
-      //   }
-      &.my-btn {
-        background-color: $primary-color;
-        &--disabled {
-          color: #fff;
-        }
-      }
+//     @include set-font-size();
+//     button {
+//       padding: 20px;
+//       border-radius: 14px;
+//       //   &:hover {
+//       //     background-color: $primary-color;
+//       //   }
+//       &.my-btn {
+//         background-color: $primary-color;
+//         &--disabled {
+//           color: #fff;
+//         }
+//       }
 
-      &.custom-border-button {
-        background: green;
-        @extend %border-style;
-        border-radius: get-border-radius(7);
-      }
-    }
-  }
-}
+//       &.custom-border-button {
+//         background: green;
+//         @extend %border-style;
+//         border-radius: get-border-radius(7);
+//       }
+//     }
+//   }
+// }
 
-button {
-  &:hover {
-  }
-
-  &:active {
-  }
-}
+@import "bootstrap";
